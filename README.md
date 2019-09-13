@@ -14,8 +14,7 @@ Wanneer je een specifiek onderdeel wilt uitlichten kun je dat in deze sectie ben
 Welke software heb je voor deze proefopdracht onderzocht? En waarom heb je uiteindelijk gekozen voor de gekozen Software. Benoem hier specifieke argumenten.
 
 ## Leerdoelen 
-- Het maken van een random generation algorithm.
-- Het implementeren van
+- Het maken en implementeren van een random generation algorithm.
 
 ## Planning 
 Je hebt grofweg 2 weken, hoe deel je deze twee weken in. Wat plan je wanneer om precies te doen?
