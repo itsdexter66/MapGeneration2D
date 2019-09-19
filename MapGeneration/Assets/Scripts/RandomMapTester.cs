@@ -14,6 +14,10 @@ public class RandomMapTester : MonoBehaviour
     public GameObject tilePrefab;
     public Vector2 tileSize = new Vector2(16, 16);
 
+    [Space]
+    [Header("Map sprites")]
+    public Texture2D islandTexture;
+
     public Map map;
 
     // Start is called before the first frame update
@@ -26,10 +30,14 @@ public class RandomMapTester : MonoBehaviour
     {
         map.NewMap(mapWidth, mapHeight);
         Debug.Log("created a new map" + map.columns + "*" + map.rows);
+        CreateGrid();
     }
 
     private void CreateGrid()
     {
+        ClearMapContainer();
+        Sprite[] sprites = Resources.LoadAll<Sprite>(islandTexture.name);
+
         var total = map.tiles.Length;
         var maxColumns = map.columns;
         var column = 0;
@@ -42,7 +50,28 @@ public class RandomMapTester : MonoBehaviour
             var newX = column * tileSize.x;
             var newY = -row * tileSize.y;
 
-            var
+            var go = Instantiate(tilePrefab);
+            go.name = "Tile " + i;
+            go.transform.SetParent(mapContainer.transform);
+            go.transform.position = new Vector3(newX, newY, 0);
+
+            var spriteID = 0;
+            var sr = go.GetComponent<SpriteRenderer>();
+            sr.sprite = sprites[spriteID];
+
+            if (column == (maxColumns - 1))
+            {
+                row++;
+            }
+        }
+    }
+
+    void ClearMapContainer()
+    {
+        var childern = mapContainer.transform.GetComponentsInChildren<Transform>();
+        for (var i = childern.Length-1; i > 0; i--)
+        {
+            Destroy(childern[i].gameObject);
         }
     }
 }
