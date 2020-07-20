@@ -3,7 +3,11 @@ guid: 51285ddf6c0dc4a67be872e3f8b8316d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mapContainer: {instanceID: 0}
+  - tilePrefab: {fileID: 7280645962363308154, guid: 6def869eeeeff4b70a4e8fe420c35ee3,
+      type: 3}
+  - islandTexture: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
